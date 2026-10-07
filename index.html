@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Soujas Kudchadkar: agentic AI and full-stack developer based in Mumbai. Projects, skills and contact.">
+<meta name="theme-color" content="#eee8db">
+<meta property="og:title" content="Soujas Kudchadkar | Agentic AI &amp; Full-Stack">
+<meta property="og:description" content="I build AI agents that ask before they do anything they can't undo.">
+<title>Soujas Kudchadkar | Agentic AI &amp; Full-Stack</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23b4552d'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%23f7f3ea'%3ESK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Warm beige editorial page. Soft rounded cards, one clay accent, a rotating seal as the signature. */
+:root{
+  --bg:#eee8db;--surface:#f7f3ea;--deep:#e4dccb;--ink:#28241e;--mute:#7f7767;--body:#4b453a;
+  --line:rgba(40,36,30,.13);--clay:#b4552d;--on-clay:#f7f3ea;--peach:#f1c9b6;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:22px;--shadow:0 1px 0 rgba(255,255,255,.7) inset,0 14px 34px -22px rgba(60,45,20,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .2  0 0 0 0 .16  0 0 0 0 .1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+::selection{background:var(--clay);color:var(--on-clay)}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+img,svg{max-width:100%}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--clay);transform-origin:left;transform:scaleX(0);z-index:60}
+
+/* nav */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:40;width:min(680px,calc(100% - 24px));
+  display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 8px 7px 14px;
+  background:rgba(247,243,234,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow)}
+.nav b{font:400 1.25rem/1 var(--serif);letter-spacing:-.01em;white-space:nowrap}
+.nav b i{color:var(--clay)}
+.nav nav{display:flex;gap:2px 6px;align-items:center}
+.nav nav a{text-decoration:none;font-size:.84rem;font-weight:500;padding:6px 11px;border-radius:999px;color:var(--mute);transition:.2s;white-space:nowrap}
+.nav nav a:hover{color:var(--ink);background:var(--deep)}
+.nav nav a.c{background:var(--ink);color:var(--surface)}
+.nav nav a.c:hover{background:var(--clay);color:var(--on-clay)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:36px;align-items:center;padding-block:132px 44px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border:1px solid var(--line);background:var(--surface);border-radius:999px;color:var(--mute)}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--clay);animation:pulse 2.2s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.hero h1{font:400 clamp(3rem,10.6vw,8rem)/.92 var(--serif);letter-spacing:-.035em;margin:22px 0 0}
+.hero h1 .ln{display:block;overflow:hidden;padding:0 .04em .08em 0}
+.hero h1 .ln span{display:block}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.lead{font-size:clamp(1.05rem,2vw,1.28rem);color:var(--body);max-width:44ch;margin:22px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;border:1px solid var(--ink);text-decoration:none;font-weight:500;font-size:.93rem;transition:background .22s,color .22s,transform .22s,border-color .22s}
+.btn:hover{transform:translateY(-2px);background:var(--ink);color:var(--surface)}
+.btn.p{background:var(--ink);color:var(--surface)}
+.btn.p:hover{background:var(--clay);border-color:var(--clay);color:var(--on-clay)}
+.seal-card{position:relative;aspect-ratio:1;max-width:100%;background:var(--surface);border:1px solid var(--line);border-radius:50%;box-shadow:var(--shadow);display:grid;place-items:center}
+.seal{width:92%;height:92%;animation:spin 32s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* cards + stats */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:26px;min-width:0}
+.dark{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.dark .k{color:#b8b09f}
+.stats{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;gap:14px;margin-top:6px}
+.stat{padding:22px 22px 20px}
+.stat b{display:block;font:400 clamp(2.4rem,5.4vw,4.2rem)/1 var(--serif);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stat .k{color:var(--mute);font-size:.86rem;margin-top:6px;display:block}
+.dark.stat b{color:var(--peach)}
+
+/* sections */
+section{padding-top:96px;scroll-margin-top:20px}
+.sh{margin-bottom:30px}
+.sh .mono{color:var(--clay);display:block;margin-bottom:8px}
+.sh h2{font:400 clamp(2.2rem,5.4vw,3.8rem)/1 var(--serif);letter-spacing:-.03em;margin:0;text-wrap:balance}
+.sh h2 em{font-style:italic;color:var(--mute)}
+.about{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:14px}
+.big{font:400 clamp(1.4rem,2.7vw,2rem)/1.3 var(--serif);margin:0 0 18px;letter-spacing:-.01em}
+.big em{color:var(--clay)}
+.about p{margin:0 0 14px;color:var(--body)}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{padding:16px 0;border-top:1px solid var(--line)}
+.tl li:first-child{border-top:0;padding-top:0}
+.tl .mono{color:var(--mute);display:block;margin-bottom:4px}
+.tl b{font-weight:600;display:block}
+.tl small{color:var(--mute);font-size:.88rem;display:block;margin-top:2px;line-height:1.5}
+
+/* projects */
+.proj{padding:12px;margin-bottom:16px;transition:transform .3s,box-shadow .3s}
+.proj:hover{transform:translateY(-4px);box-shadow:var(--shadow),0 26px 50px -30px rgba(60,45,20,.5)}
+.art{background:var(--deep);border-radius:calc(var(--r) - 10px);height:200px;display:grid;place-items:center;position:relative;overflow:hidden}
+.art svg{width:min(100%,520px);height:auto;max-height:100%}
+.pbody{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:10px 40px;padding:22px 16px 16px}
+.pbody h3{font:400 clamp(2rem,4.4vw,3rem)/1 var(--serif);letter-spacing:-.025em;margin:0}
+.sub{color:var(--mute);margin:8px 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{padding:3px 11px;border:1px solid var(--line);border-radius:999px;font-family:var(--mono);font-size:.7rem;background:var(--bg)}
+.pbody ul{margin:0;padding-left:1.1em}
+.pbody li{margin:0 0 .6em;color:var(--body)}
+.pbody li::marker{color:var(--clay)}
+.pl{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.pl a{font-size:.9rem;font-weight:500;padding:8px 16px;border-radius:999px;border:1px solid var(--ink);text-decoration:none;transition:.2s}
+.pl a:hover{background:var(--ink);color:var(--surface)}
+.pl a.p{background:var(--clay);border-color:var(--clay);color:var(--on-clay)}
+.pl a.p:hover{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.s-line{stroke:var(--ink);stroke-width:1.4;fill:none}
+.s-node{fill:var(--surface);stroke:var(--ink);stroke-width:1.4}
+.s-gate{fill:var(--clay);stroke:var(--clay)}
+.s-t{font-family:"JetBrains Mono",monospace;font-size:13px;fill:var(--ink);letter-spacing:.06em}
+.s-t.on{fill:var(--on-clay)}
+.s-dot{fill:var(--clay)}.s-core{fill:var(--ink)}
+.orb{transform-box:fill-box;transform-origin:center;animation:spin 40s linear infinite}
+.orb2{animation-duration:26s;animation-direction:reverse}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.skills .card{padding:22px}
+.skills h3{font:400 1.55rem/1.1 var(--serif);margin:0 0 14px;letter-spacing:-.01em}
+
+/* contact */
+.contact{padding:clamp(28px,6vw,64px);border-radius:28px}
+.contact .mono{color:var(--peach)}
+.contact p.big{color:#d8d1c1;max-width:26ch;margin:12px 0 26px}
+.mail{display:block;font:400 clamp(1.4rem,5.2vw,3.9rem)/1.08 var(--serif);letter-spacing:-.025em;text-decoration:none;overflow-wrap:anywhere;width:fit-content;max-width:100%;border-bottom:2px solid var(--clay);padding-bottom:8px;margin-bottom:28px;transition:color .2s}
+.mail:hover{color:var(--peach)}
+.soc{display:flex;flex-wrap:wrap;gap:10px}
+.soc a{padding:10px 20px;border-radius:999px;border:1px solid rgba(247,243,234,.4);text-decoration:none;font-weight:500;font-size:.92rem;transition:.2s}
+.soc a:hover{background:var(--surface);color:var(--ink)}
+footer{padding-block:34px 44px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* responsive: laptop > tablet > phone > small phone */
+@media(max-width:900px){
+  .hero{grid-template-columns:minmax(0,1fr);padding-top:104px;gap:18px}
+  .seal-card{width:116px;order:-1}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about,.pbody{grid-template-columns:minmax(0,1fr)}
+  .skills{grid-template-columns:repeat(2,minmax(0,1fr))}
+  section{padding-top:80px}
+}
+@media(max-width:560px){
+  body{font-size:16px}
+  .wrap{padding-inline:16px}
+  .nav nav a{padding:6px 8px;font-size:.78rem}
+  .nav b{font-size:1.1rem}
+  .card{padding:20px}
+  .skills{grid-template-columns:minmax(0,1fr)}
+  .art{height:170px}
+  .pbody{padding:18px 8px 10px}
+  .stat{padding:18px 16px}
+  section{padding-top:64px}
+}
+@media(max-width:360px){
+  .nav b{display:none}
+  .nav{justify-content:center;padding-left:8px}
+  .stats{grid-template-columns:minmax(0,1fr)}
+  .btn{padding:11px 16px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<header class="nav">
+<b>Soujas<i>.</i></b>
+<nav><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a class="c" href="#contact">Contact</a></nav>
+</header>
+
+<main class="wrap">
+
+<div class="hero">
+<div>
+<span class="pill mono" data-hero>Open to internships</span>
+<h1><span class="ln"><span data-line>Soujas</span></span><span class="ln"><span data-line><em>Kudchadkar</em></span></span></h1>
+<p class="lead" data-hero>Agentic AI and full-stack developer in Mumbai. I build AI agents that ask before they do anything they can't undo.</p>
+<div class="cta" data-hero>
+<a class="btn p" href="#projects">See my work</a>
+<a class="btn" href="#contact">Get in touch</a>
+<a class="btn" href="https://github.com/soujasK" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div>
+<div class="seal-card" data-seal aria-hidden="true">
+<svg class="seal" viewBox="0 0 200 200">
+<defs><path id="c" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
+<circle cx="100" cy="100" r="46" fill="#b4552d"/>
+<text x="100" y="112" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="36" fill="#f7f3ea">SK</text>
+<text font-family="JetBrains Mono,monospace" font-size="11.5" fill="#28241e"><textPath href="#c" textLength="474" lengthAdjust="spacing">PR #700 MERGED · AUDITLANE · ASKS FIRST · ACTS SECOND ·</textPath></text>
+</svg>
+</div>
+</div>
+
+<div class="stats">
+<div class="card stat dark"><b>#700</b><span class="k">PR merged upstream</span></div>
+<div class="card stat"><b data-n="127">127</b><span class="k">tests on AuditLane</span></div>
+<div class="card stat"><b data-n="22">22</b><span class="k">command categories gated</span></div>
+<div class="card stat"><b data-n="500" data-s="+">500+</b><span class="k">CP problems solved</span></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="sh" data-rv><span class="mono">About</span><h2>A bit about <em>me</em></h2></div>
+<div class="about">
+<div class="card" data-rv>
+<p class="big">I'm a Data Science student at NMIMS MPSTME, Mumbai. What pulls me in is <em>agentic systems</em>: tool-calling, the Model Context Protocol, and the unglamorous work of making autonomous agents safe to run.</p>
+<p>I like deterministic checks before risky actions, a human in the loop for anything irreversible, and tests that try to break the thing I just built.</p>
+<p style="margin:0">Away from agents I do competitive programming across Codeforces, LeetCode and CodeChef, and I was a Flipkart GRiD 8.0 semifinalist.</p>
+</div>
+<div class="card" data-rv>
+<ul class="tl">
+<li><span class="mono">Jun – Jul 2026</span><b>Frontend Developer Intern</b><small>TekkLoom, Mumbai · React.js, Next.js, TypeScript. Implemented modular client interfaces with React, TypeScript and Tailwind CSS, shipping production-facing features alongside the technical founders. Built dynamic UI states, layout transitions and view-driven render lifecycles with Framer Motion and GSAP.</small></li>
+<li><span class="mono">Expected May 2028</span><b>B.Tech Data Science</b><small>SVKM's NMIMS Mukesh Patel School of Technology Management &amp; Engineering, Mumbai · CGPA 3.23/4<br>Coursework: Data Structures &amp; Algorithms, Database Management Systems, Machine Learning, Web Development, Statistics, Calculus</small></li>
+<li><span class="mono">Competitive programming</span><b>500+ problems solved</b><small>Across Codeforces, LeetCode and CodeChef. CodeChef 2-Star (1417 peak rating).</small></li>
+<li><span class="mono">Honours</span><b>Flipkart GRiD 8.0</b><small>Semifinalist</small></li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="sh" data-rv><span class="mono">Projects</span><h2>Selected <em>work</em></h2></div>
+
+<article class="card proj" data-rv>
+<div class="art">
+<svg viewBox="0 0 520 140" role="img" aria-label="Diagram: an agent action passes a gate, then human approval, before it runs">
+<path class="s-line" d="M118 70H190M330 70H402"/>
+<path class="s-line" d="M184 64l8 6-8 6M396 64l8 6-8 6"/>
+<rect class="s-node" x="14" y="42" width="106" height="56" rx="14"/>
+<rect class="s-node s-gate" x="192" y="38" width="138" height="64" rx="16"/>
+<rect class="s-node" x="400" y="42" width="106" height="56" rx="14"/>
+<text class="s-t" x="67" y="75" text-anchor="middle">AGENT</text>
+<text class="s-t on" x="261" y="75" text-anchor="middle">GATE</text>
+<text class="s-t" x="453" y="75" text-anchor="middle">HUMAN</text>
+</svg>
+</div>
+<div class="pbody">
+<div>
+<h3>AuditLane</h3>
+<p class="sub">AI agent governance &amp; verification engine</p>
+<div class="chips"><span>Python</span><span>Claude Code</span><span>LLM Agents</span><span>CALL-E Voice API</span><span>GitHub Actions</span><span>Pytest</span></div>
+<div class="pl">
+<!-- TODO: replace with the AuditLane repo URL -->
+<a class="p" href="https://github.com/soujasK" target="_blank" rel="noopener">View code →</a>
+</div>
+</div>
+<ul>
+<li>Built a deterministic pre-tool execution hook for autonomous agentic workflows (tool-calling). It intercepts destructive commands (SQL drops, recursive file deletions, unauthorized infrastructure tear-downs) across 22 operational categories before they are dispatched.</li>
+<li>Integrated programmatic voice authorization through outbound CALL-E Voice API calls, so irreversible agent actions wait for direct human-in-the-loop verification.</li>
+<li>Developed a GitHub Actions CI/CD validation workflow that scans pull request payloads for approval assertions, dispatches verification events, and enforces pass/fail commit statuses to gate code merges.</li>
+<li>Wrote 127 Pytest tests, including an adversarial fault-injection framework that found two edge cases before deployment, and fixed container path resolution inside the target runners.</li>
+<li>Contributed the core hook as an open-source tool skill to CALL-E's public repository, accepted and merged by the maintainers as PR #700.</li>
+</ul>
+</div>
+</article>
+
+<article class="card proj" data-rv>
+<div class="art">
+<svg viewBox="0 0 520 160" role="img" aria-label="Decorative orbital diagram">
+<g class="orb"><ellipse class="s-line" cx="260" cy="80" rx="220" ry="46" transform="rotate(-14 260 80)"/><circle class="s-dot" cx="478" cy="62" r="6"/></g>
+<g class="orb orb2"><ellipse class="s-line" cx="260" cy="80" rx="150" ry="30" transform="rotate(18 260 80)"/><circle class="s-core" cx="392" cy="106" r="5"/></g>
+<circle class="s-core" cx="260" cy="80" r="16"/>
+</svg>
+</div>
+<div class="pbody">
+<div>
+<h3>KesslerShield LEO</h3>
+<p class="sub">Orbital hazard monitoring &amp; agent flight deck</p>
+<div class="chips"><span>React</span><span>TypeScript</span><span>Three.js</span><span>WebMCP</span><span>FastAPI</span><span>Playwright</span></div>
+<div class="pl">
+<a class="p" href="https://kesslershield-leo-onrender-com.onrender.com" target="_blank" rel="noopener">Live demo →</a>
+<!-- TODO: replace with the KesslerShield repo URL -->
+<a href="https://github.com/soujasK" target="_blank" rel="noopener">View code →</a>
+</div>
+</div>
+<ul>
+<li>Built an interactive full-stack flight deck in React and TypeScript that exposes client-side astrodynamic engines (Keplerian orbital propagation, Clohessy-Wiltshire proximity modelling) as deterministic tool-calling endpoints for AI agents through the Model Context Protocol (WebMCP).</li>
+<li>Constructed a dual-transport communication interface (native WebMCP host with local fallback bridging) and a structured command console, and validated end-to-end tool execution with Playwright test automation.</li>
+<li>Engineered a client-side visualization layer in React and Three.js, integrated with local and remote FastAPI / MCP servers, that streams orbital trajectory telemetry at 60 FPS.</li>
+</ul>
+</div>
+</article>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="sh" data-rv><span class="mono">Skills</span><h2>Tools I <em>reach for</em></h2></div>
+<div class="skills">
+<div class="card" data-sk><h3>AI &amp; agentic systems</h3><div class="chips"><span>Agentic workflows</span><span>Tool-calling architectures</span><span>LLM integrations</span><span>LangChain</span><span>OpenAI APIs</span><span>MCP / WebMCP</span><span>Claude Code</span><span>AI guardrails</span><span>Human-in-the-loop</span></div></div>
+<div class="card" data-sk><h3>Frontend</h3><div class="chips"><span>React.js</span><span>TypeScript</span><span>JavaScript</span><span>Next.js</span><span>Three.js</span><span>Tailwind CSS</span><span>Framer Motion</span><span>GSAP</span></div></div>
+<div class="card" data-sk><h3>Backend &amp; databases</h3><div class="chips"><span>Python</span><span>FastAPI</span><span>Node.js</span><span>RESTful APIs</span><span>SQL</span><span>PostgreSQL</span><span>MySQL</span></div></div>
+<div class="card" data-sk><h3>CS fundamentals</h3><div class="chips"><span>C++</span><span>Data structures</span><span>Algorithms</span><span>OOP</span></div></div>
+<div class="card" data-sk><h3>Tools &amp; verification</h3><div class="chips"><span>Git</span><span>GitHub Actions</span><span>Pytest</span><span>Playwright</span><span>Automated regression testing</span><span>Docker</span><span>Linux</span></div></div>
+</div>
+</section>
+
+<!-- CONTACT (email and links only, no phone or address) -->
+<section id="contact">
+<div class="card dark contact" data-rv>
+<span class="mono">Contact</span>
+<p class="big">Open to internships and collaborations in agentic AI and full-stack development.</p>
+<a class="mail" href="mailto:kudchadkarsoujas@gmail.com">kudchadkarsoujas@gmail.com</a>
+<div class="soc">
+<a href="https://github.com/soujasK" target="_blank" rel="noopener">GitHub</a>
+<a href="https://codeforces.com/profile/SoujasKudchadkar" target="_blank" rel="noopener">Codeforces</a>
+<a href="https://leetcode.com/u/soujas12" target="_blank" rel="noopener">LeetCode</a>
+</div>
+</div>
+</section>
+
+<footer class="mono"><span>© 2026 Soujas Kudchadkar</span><span>Hand-written HTML, CSS, JS · animation by GSAP</span></footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+var prog = document.getElementById("prog");
+
+if (window.gsap && window.ScrollTrigger && !reduce) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.timeline({ defaults: { ease: "power4.out" } })
+    .from("[data-line]", { yPercent: 115, duration: 1.1, stagger: .12 })
+    .from("[data-hero]", { y: 20, opacity: 0, duration: .8, stagger: .1 }, "-=.8")
+    .from("[data-seal]", { scale: .6, opacity: 0, duration: 1.1, ease: "back.out(1.4)" }, "-=.9");
+
+  gsap.to("[data-seal]", { y: -30, rotate: 25, ease: "none",
+    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+
+  gsap.to("#prog", { scaleX: 1, ease: "none",
+    scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: .3 } });
+
+  // reveals start from a visible state, so nothing is ever fully hidden
+  gsap.utils.toArray("[data-rv]").forEach(function (el) {
+    gsap.from(el, { y: 36, opacity: .3, duration: .9, ease: "power3.out",
+      scrollTrigger: { trigger: el, start: "top 92%", once: true } });
+  });
+  gsap.from(".stat", { y: 28, opacity: .3, duration: .8, stagger: .1, ease: "power3.out",
+    scrollTrigger: { trigger: ".stats", start: "top 94%", once: true } });
+  gsap.from("[data-sk]", { y: 28, opacity: .3, duration: .8, stagger: .1, ease: "power3.out",
+    scrollTrigger: { trigger: ".skills", start: "top 92%", once: true } });
+
+  // count-up: the final number stays in the markup and the count only runs on scroll
+  document.querySelectorAll("[data-n]").forEach(function (el) {
+    var n = +el.dataset.n, s = el.dataset.s || "", o = { v: 0 };
+    ScrollTrigger.create({ trigger: el, start: "top 94%", once: true, onEnter: function () {
+      gsap.to(o, { v: n, duration: 1.5, ease: "power2.out",
+        onUpdate: function () { el.textContent = Math.round(o.v) + s; } });
+    }});
+  });
+} else if (!reduce) {
+  addEventListener("scroll", function () {
+    var h = document.documentElement;
+    prog.style.transform = "scaleX(" + h.scrollTop / (h.scrollHeight - h.clientHeight) + ")";
+  }, { passive: true });
+}
+</script>
+</body>
+</html>
