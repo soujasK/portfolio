@@ -4,7 +4,7 @@ Personal portfolio website for the Personal Portfolio Website assignment.
 
 - **Live site:** https://soujask.github.io/portfolio/
 - **Stack:** plain HTML, CSS and JavaScript in a single `index.html`. No site builder and no template.
-- **Sections:** About, Projects (AuditLane, KesslerShield LEO), Skills, Contact.
+- **Sections:** About, Projects (AuditLane, Smoulder), Skills, Contact.
 - **Responsive:** laptop, tablet and phone layouts (checked down to 320px wide).
 
 ## Credits

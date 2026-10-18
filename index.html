@@ -118,8 +118,9 @@ section{padding-top:96px;scroll-margin-top:20px}
 .s-t{font-family:"JetBrains Mono",monospace;font-size:13px;fill:var(--ink);letter-spacing:.06em}
 .s-t.on{fill:var(--on-clay)}
 .s-dot{fill:var(--clay)}.s-core{fill:var(--ink)}
-.orb{transform-box:fill-box;transform-origin:center;animation:spin 40s linear infinite}
-.orb2{animation-duration:26s;animation-direction:reverse}
+.plume{stroke-dasharray:4 8;animation:drift 2.4s linear infinite}
+@keyframes drift{to{stroke-dashoffset:-24}}
+.ping{animation:pulse 1.8s ease-in-out infinite}
 
 /* skills */
 .skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
@@ -264,27 +265,33 @@ footer{padding-block:34px 44px;color:var(--mute);display:flex;justify-content:sp
 
 <article class="card proj" data-rv>
 <div class="art">
-<svg viewBox="0 0 520 160" role="img" aria-label="Decorative orbital diagram">
-<g class="orb"><ellipse class="s-line" cx="260" cy="80" rx="220" ry="46" transform="rotate(-14 260 80)"/><circle class="s-dot" cx="478" cy="62" r="6"/></g>
-<g class="orb orb2"><ellipse class="s-line" cx="260" cy="80" rx="150" ry="30" transform="rotate(18 260 80)"/><circle class="s-core" cx="392" cy="106" r="5"/></g>
-<circle class="s-core" cx="260" cy="80" r="16"/>
+<svg viewBox="0 0 520 160" role="img" aria-label="Decorative diagram of landfill smoke drifting downwind over homes">
+<text class="s-t" x="300" y="30">WIND →</text>
+<path class="s-line plume" d="M110 92C150 58 230 48 320 56S450 68 500 60"/>
+<path class="s-line plume" d="M114 96C170 80 250 76 340 82S460 90 500 88"/>
+<path class="s-line" d="M20 132H500"/>
+<path class="s-node" d="M40 132Q110 66 180 132Z"/>
+<circle class="s-dot" cx="110" cy="99" r="6"/>
+<circle class="s-node" cx="300" cy="126" r="6"/>
+<circle class="s-dot ping" cx="380" cy="126" r="6"/>
+<circle class="s-node" cx="460" cy="126" r="6"/>
 </svg>
 </div>
 <div class="pbody">
 <div>
-<h3>KesslerShield LEO</h3>
-<p class="sub">Orbital hazard monitoring &amp; agent flight deck</p>
-<div class="chips"><span>React</span><span>TypeScript</span><span>Three.js</span><span>WebMCP</span><span>FastAPI</span><span>Playwright</span></div>
+<h3>Smoulder</h3>
+<p class="sub">Landfill fire &amp; smoke alert system · AWS Environmental Hacks</p>
+<div class="chips"><span>AWS Step Functions</span><span>Lambda</span><span>S3</span><span>DynamoDB</span><span>SNS</span><span>Amplify</span><span>React</span><span>Three.js</span></div>
 <div class="pl">
-<a class="p" href="https://kesslershield-leo-onrender-com.onrender.com" target="_blank" rel="noopener">Live demo →</a>
-<!-- TODO: replace with the KesslerShield repo URL -->
-<a href="https://github.com/soujasK" target="_blank" rel="noopener">View code →</a>
+<!-- TODO: add the Smoulder live site link (class="p", "Live demo →") -->
+<!-- TODO: replace with the Smoulder repo URL -->
+<a class="p" href="https://github.com/soujasK" target="_blank" rel="noopener">View code →</a>
 </div>
 </div>
 <ul>
-<li>Built an interactive full-stack flight deck in React and TypeScript that exposes client-side astrodynamic engines (Keplerian orbital propagation, Clohessy-Wiltshire proximity modelling) as deterministic tool-calling endpoints for AI agents through the Model Context Protocol (WebMCP).</li>
-<li>Constructed a dual-transport communication interface (native WebMCP host with local fallback bridging) and a structured command console, and validated end-to-end tool execution with Playwright test automation.</li>
-<li>Engineered a client-side visualization layer in React and Three.js, integrated with local and remote FastAPI / MCP servers, that streams orbital trajectory telemetry at 60 FPS.</li>
+<li>Built a serverless AWS pipeline orchestrated with Step Functions, Lambda, S3 and DynamoDB that ingests NASA satellite and wind data and turns it into a public fire record covering 9 Indian landfills.</li>
+<li>Added per-address smoke-day counts showing how many days each address has been affected by landfill smoke, plus automated downwind email alerts (SNS) that notify addresses in the smoke's path.</li>
+<li>Deployed a React/Three.js web app on AWS Amplify to present the public record and alerts.</li>
 </ul>
 </div>
 </article>
